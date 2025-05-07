@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family.Poppins:wght@400;500;600&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to right top, #65dfc9, #6cdbeb);
+    position: relative;
+}
+.circle
+{
+    background: #fff;
+    background: linear-gradient(to right bottom, rgba(255,255,255,0.8), rgba(255,255,255,0.3));
+    height: 17rem;
+    width: 17rem;
+    position: absolute;
+   border-radius: 50%;
+}
+.circle1
+{
+    top: 5%;
+    right: 10%;
+}
+.circle2
+{
+    bottom: 5%;
+    left: 7%;
+}
+
+.board
+{
+    display: flex;
+    width: 100%;
+    max-width: 1050px;
+    gap: 10px;
+    padding: 10px;
+    z-index: 2;
+    backdrop-filter: blur(0.1rem);
+}
+
+section
+{
+    background: linear-gradient(to right bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.3));
+    border-radius: 7px;
+    z-index: 5;
+}
+
+    .tools-board
+    {
+        width: 210px;
+        padding: 15px 22px 0;
+    }
+        .tools-board .shapes
+        {
+            margin-bottom: 20px;
+        }
+            .shapes .options
+            {
+                list-style: none;
+                margin: 10px 0 0 5px;
+            }
+                .shapes .options .option
+                {
+                    display: flex;
+                    cursor: pointer;
+                    align-items: center;
+                    margin-bottom: 10px;
+                }
+                    .option :where(span,label)
+                    {
+                        color: #546168;
+                        cursor: pointer;
+                        padding-left: 10px;
+                    }
+                    .option #fill-color
+                    {
+                        cursor: pointer;
+                        height: 14px;
+                        width: 14px     ;
+                    }
+                    .option:is(:hover , .active) img
+                    {
+                        filter: invert(17%) sepia(50%) saturate(3000%) brightness(100%) contrast(100%) hue-rotate(900deg);
+                    }
+                        .option:is(:hover , .active) :where(span , label) 
+                        {
+                            color: #4A98F7;
+                        }
+                        #fill-color:checked ~ label
+                        {
+                            color: #4A98F7;
+                        }
+                    .option #size-slider
+                    {
+                        width: 100%;
+                        height: 5px;
+                        margin-top: 10px;
+                    }
+            .colors .options
+            {
+                display: flex;
+                justify-content: space-between;
+            }
+                .colors .option
+                {
+                    height: 20px;
+                    width: 20px;
+                    border-radius: 50%;
+                    margin-top: 3px;
+                    position: relative;
+                }
+                    .option #color-picker
+                    {
+                        opacity: 0;
+                        cursor: pointer;
+                    }
+                    .colors .option:nth-child(1)
+                    {
+                        background-color: #fff;
+                        border: 2px solid #bfbfbf;
+                    }
+                    .colors .option:nth-child(2)
+                    {
+                        background-color: #000;
+                    }
+                    .colors .option:nth-child(3)
+                    {
+                        background-color: #E02020;
+                    }
+                    .colors .option:nth-child(4)
+                    {
+                        background-color: #6DD400;
+                    }
+                    .colors .option:nth-child(5)
+                    {
+                        background-color: #4A98F7;
+                    }
+                    .colors .option.selected::before
+                    {
+                        position: absolute;
+                        content: "";
+                        top: 50%;
+                        left: 50%;
+                        height: 12px;
+                        width: 12px;
+                        background: inherit;
+                        border-radius: inherit;
+                        border: 2px solid #fff;
+                        transform: translate(-50%,-50%);
+                    }
+                    .colors .option:first-child.selected::before
+                    {
+                        border-color: #ccc;
+                    }
+            .buttons button
+            {
+                width: 100%;
+                color: #fff;
+                border: none;
+                outline: none;
+                padding: 11px 0;
+                font-size: 0.9rem;
+                margin-bottom: 13px;
+                background: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+            .buttons .clear-canvas
+            {
+                color: #6C757D;
+                border: 1px solid #6C757D;
+                transition: all 0.3s ease;
+            }
+                .clear-canvas:hover
+                {
+                    color: #fff;
+                    background: #6C757D;
+                }
+            .buttons .save-img
+            {
+                background: #4A98F7;
+                border: 1px solid #4A98F7;
+            }
+    .drawing-board
+    {
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+        .drawing-board canvas
+        {
+            width: 90%;
+            height: 90%;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 7px;
+        }

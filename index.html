@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Application</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="board">
+        <section class="tools-board">
+            <div class="shapes">
+                <label class="title">Shapes</label>
+                <ul class="options">
+                    <li class="option tool" id="rectangle">
+                        <img src="rectangle.svg" alt="">
+                        <span>Rectangle</span>
+                    </li>
+                    <li class="option tool" id="circle">
+                        <img src="circle.svg" alt="">
+                        <span>Circle</span>
+                    </li>
+                    <li class="option tool" id="traingle">
+                        <img src="triangle.svg" alt="">
+                        <span>Traingle</span>
+                    </li>
+                    <li class="option">
+                        <input type="checkbox" name="" id="fill-color">
+                        <label for="fill-color">Fill Color</label>
+                    </li>
+                </ul>
+            </div>
+            <div class="shapes Opt">
+                <label class="title">Options</label>
+                <ul class="options">
+                    <li class="option active tool" id="brush">
+                        <img src="brush.svg" alt="">
+                        <span>Brush</span>
+                    </li>
+                    <li class="option tool" id="eraser">
+                        <img src="eraser.svg" alt="">
+                        <span>Eraser</span>
+                    </li>
+                    <li class="option">
+                        <input type="range" name="" id="size-slider" min="1" max="30" value="5">
+                    </li>
+                </ul>
+            </div>
+            <div class="shapes colors">
+                <label class="title">Colors</label>
+                <ul class="options">
+                    <li class="option"></li>
+                    <li class="option selected"></li>
+                    <li class="option"></li>
+                    <li class="option"></li>
+                    <li class="option">
+                        <input type="color" id="color-picker" value="#4A98F7">
+                    </li>
+                </ul>
+            </div>
+            <div class="shapes buttons">
+                <button  class="clear-canvas">Clear Canvas</button>
+                <button  class="save-img">Save as Image</button>
+            </div>
+        </section>
+        <section class="drawing-board">
+            <canvas></canvas>
+        </section>
+    </div>
+    <div class="circle1 circle"></div>
+    <div class="circle2 circle"></div>
+</body>
+</html>
